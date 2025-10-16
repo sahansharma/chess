@@ -1,32 +1,22 @@
 class Board:
     def __init__(self):
-        self._pawn_position = 'a1'
-        self._queen_position = 'a1'
+        self._pieces = {}
 
     def add_pawn(self, pos: str):
-        self._pawn_position = pos
+        self._pieces[pos] = 'pawn'
 
     def piece_type(self, pos: str):
-        if self._pawn_position == pos:
-            return 'pawn'
-        if self._queen_position == pos:
-            return 'queen'
-        return 'empty'
+        return self._pieces.get(pos, 'empty')
 
     def add_queen(self, pos: str):
-        self._queen_position = pos
+        self._pieces[pos] = 'queen'
 
     def add(self, pos: str, piece_name: str):
-        if piece_name == 'pawn':
-            self._pawn_position = pos
-        elif piece_name == 'queen':
-            self._queen_position = pos
+        self._pieces[pos] = piece_name
 
     def move(self, from_pos: str, to_pos: str):
-        if self._pawn_position == from_pos:
-            self._pawn_position = to_pos
-        elif self._queen_position == from_pos:
-            self._queen_position = to_pos
+        piece = self._pieces.pop(from_pos)
+        self._pieces[to_pos] = piece
 
-    def iterate_pieces(self):
-        return []
+    def iterate_pieces(self) -> list[str]:
+        return [*self._pieces.keys()]

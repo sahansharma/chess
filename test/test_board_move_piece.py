@@ -26,3 +26,7 @@ def test_user_moves_queen_diagonally(board: Board):
 
 def test_empty_board_has_no_pieces(board: Board):
     assert board.iterate_pieces() == []
+
+def test_board_outputs_all_pieces(board: Board):
+    board.add('b7', 'pawn')
+    assert board.iterate_pieces() == ['b7']
