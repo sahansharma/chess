@@ -1,4 +1,7 @@
-test/__pycache__
-/.venv
+# Project
+.idea/
+
+# Python
+.venv/
 __pycache__/
 *.pyc
