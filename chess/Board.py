@@ -18,10 +18,10 @@ class Board:
 
     def add(self, pos, piece_name):
         if piece_name == 'pawn':
-            self._pawn_position = pos 
+            self._pawn_position = pos
         elif piece_name == 'queen':
             self._queen_position = pos
-    
+
     def move(self, from_pos, to_pos):
         if self._pawn_position == from_pos:
             self._pawn_position = to_pos
