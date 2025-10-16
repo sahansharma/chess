@@ -27,3 +27,6 @@ class Board:
             self._pawn_position = to_pos
         elif self._queen_position == from_pos:
             self._queen_position = to_pos
+
+    def iterate_pieces(self):
+        return []

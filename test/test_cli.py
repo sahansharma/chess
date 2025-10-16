@@ -17,13 +17,13 @@ def test_empty_board():
 """
 
 def test_board_one_pawn():
-    # given a pawn is at e3
+    # given a pawn is at b7
     board = Board()
-    board.add('pawn', 'b7')
+    board.add('b7', 'pawn')
     # when the cli is rendered
     cli = ChessCli(board)
     view = cli.board()
-    # then the view contains a pawn at e3
+    # then the view contains a pawn at b7
     assert view == """
 ----------
 |        |
